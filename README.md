@@ -149,6 +149,6 @@ workflows/     11 n8n workflow exports (placeholders instead of ids; safe to com
 policies/      RAG source: company policies (Hebrew) + agent instructions (English)
 data/          products.csv + seed records for the demo
 scripts/       airtable_setup.py · n8n_import.py · load_rag.py · smoke_test.py
-app/           Lovable build prompt
+app/           Lovable build prompts (admin app, demo landing page)
 docs/          architecture, schema, VAT rules, demo script, exam Q&A, screenshots, course brief
 ```
