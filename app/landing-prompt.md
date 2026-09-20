@@ -6,9 +6,23 @@
 ## פרומפט (להדביק כמו שהוא)
 
 ```
-Build a single-page marketing landing page for "Chen Electronics" (חן אלקטרוניקה), a small Israeli
-electronics store, promoting its wireless headphones. Hebrew UI, RTL (dir="rtl"), ILS prices (₪),
-mobile-friendly, clean light design with a blue accent (#1f4e79). No database, no auth.
+You are a senior front-end engineer and UI/UX designer with 20 years of experience building
+conversion-focused landing pages. Apply that judgment: clear visual hierarchy, generous whitespace,
+one primary call to action, readable Hebrew typography (Heebo from Google Fonts), consistent 8px
+spacing, accessible contrast and focus states, and a layout that looks intentional on both phone
+and desktop.
+
+Build a single-page marketing landing page for "Chen Electronics" (חן אלקטרוניקה), a small
+FICTIONAL Israeli electronics store, promoting its wireless headphones. Hebrew UI, RTL (dir="rtl"),
+ILS prices (₪), mobile-friendly, clean light design with a blue accent (#1f4e79). No database, no auth.
+
+Copyright and originality (strict):
+- Do NOT use any real brand names, logos, trademarks, slogans or product photos (no Sony, Bose,
+  Apple, JBL, etc.). The brand and products are fictional ("TY-200", "TY-Buds Pro", "TY-Gamer H7").
+- Do NOT load images from the internet or from stock-photo sites. Use only your own generated
+  visuals: CSS shapes/gradients and inline SVG icons (e.g. lucide-react), or an abstract
+  illustration drawn in code.
+- Write all copy yourself; do not quote or paraphrase existing ads.
 
 Sections:
 1. Hero: headline "אוזניות אלחוטיות עם סינון רעשים, במחיר של חנות שכונתית", short subtitle, CTA button
@@ -27,7 +41,10 @@ Sections:
    Response { ok: true, created: false, reason: "duplicate" } → "הפרטים כבר אצלנו, ניצור קשר בקרוב."
    HTTP 400 or network error → red toast "משהו השתבש, נסו שוב".
    Disable the button while sending. No other network calls.
-5. Footer: חן אלקטרוניקה · רחוב הברזל 30, תל אביב · 03-555-1234 · support@chen-electronics.co.il
+5. Footer with two lines: 
+   - חן אלקטרוניקה · רחוב הברזל 30, תל אביב · 03-555-1234 · support@chen-electronics.co.il
+   - A clearly visible disclaimer, also repeated as a small banner at the very top of the page:
+     "אתר דמו לפרויקט גמר בקורס AI-ERP עם n8n (ג׳ון ברייס). העסק, המוצרים והמחירים דמיוניים; לא מתבצעת מכירה."
 
 Keep the code simple: one page, one fetch call.
 ```
