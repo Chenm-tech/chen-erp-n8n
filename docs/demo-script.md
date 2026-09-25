@@ -5,7 +5,7 @@
 - [ ] `python3 scripts/load_rag.py` (המאגר הווקטורי בזיכרון, אולי נמחק)
 - [ ] `python3 scripts/smoke_test.py` — הכל ירוק
 - [ ] ב-n8n: כל ה-workflows Active. לשונית Executions פתוחה בטאב נפרד
-- [ ] פתוחים בטאבים: Airtable (Leads, Invoices), Gmail, Google Drive, אפליקציית Lovable (https://hanan-erp.lovable.app), GitHub
+- [ ] פתוחים בטאבים: Airtable (Leads, Invoices), Gmail, Google Drive, אפליקציית Lovable, GitHub
 - [ ] טלגרם פתוח בטלפון עם שני הבוטים
 - [ ] לוודא שיש לפחות ליד אחד בסטטוס New (להוסיף ידנית אם צריך)
 
@@ -18,7 +18,7 @@
 
 ## 0:30 ליד נכנס (1.5 דק')
 
-1. בדף הנחיתה https://chen-electronics-landing.lovable.app (או בטופס "ליד חדש" באפליקציה): למלא שם + אימייל (כתובת שלך עם +demo) → שלח.
+1. בדף הנחיתה (או בטופס "ליד חדש" באפליקציה): למלא שם + אימייל (כתובת שלך עם +demo) → שלח.
 2. ב-Airtable: הרשומה הופיעה עם Status = New. ב-Gmail: מייל התראה "ליד חדש".
 3. ב-n8n: WF2 → להראות את הקנבס עם הפתקים: בדיקת אימייל, כפילות, יצירה, תשובה.
 4. לשלוח שוב את אותו ליד מהטופס → תשובת duplicate, לא נוצר כפול. **זה טיפול שגיאה.**

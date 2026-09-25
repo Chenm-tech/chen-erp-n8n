@@ -8,13 +8,15 @@ Course brief: [`docs/final-project-spec.docx`](docs/final-project-spec.docx).
 > תשובות מבוט טלגרם שמעוגן במדיניות ובקטלוג (RAG), חשבוניות מקבלות מע"מ ומספר עוקב ומופקות כמסמך לדרייב,
 > ובעל העסק שואל בוט פרטי "מה ההכנסות?". אפס קוד: כל הלוגיקה בצמתים מוכנים של n8n.
 
+> **Project status:** submitted and graded (September 2026). The live demo (self-hosted n8n, Airtable base, Lovable apps, Telegram bots) was shut down after grading, so there are no live URLs. Everything needed to rebuild it is in this repo: `scripts/` recreate the Airtable base and import the workflows, `app/` holds the Lovable prompts, and the screenshots below show the running system.
+
 ## Three layers, one data model
 
 | Layer | Where | Role |
 |---|---|---|
 | Data | Airtable | 6 tables (`Invoices`, `Leads`, `Customers`, `Orders`, `Products`, `Tasks`) — single source of truth |
 | Logic | n8n Cloud | 10 workflows + 1 error handler, 3 AI agents, in-memory vector store (RAG) |
-| UI | Lovable | Admin app: dashboard, customers, leads, orders, invoices, products, tasks, chat — talks to n8n through **one** webhook. Live: [https://hanan-erp.lovable.app](https://hanan-erp.lovable.app). Demo landing page (lead form → WF2): [https://chen-electronics-landing.lovable.app](https://chen-electronics-landing.lovable.app) |
+| UI | Lovable | Admin app: dashboard, customers, leads, orders, invoices, products, tasks, chat — talks to n8n through **one** webhook. Plus a demo landing page whose lead form posts to WF2. |
 
 ```
  website / app form ──POST──▶ WF2 Leads Intake ──▶ Airtable.Leads ──▶ WF3 Cold Email (every 3h) ──▶ Gmail
@@ -87,8 +89,8 @@ python3 scripts/load_rag.py            # needs FORM_POLICIES_ID / FORM_PRODUCTS_
 python3 scripts/smoke_test.py
 ```
 
-4. Build the admin app in Lovable with [`app/lovable-prompt.md`](app/lovable-prompt.md) and the `/webhook/app` URL, then Publish (ours: https://hanan-erp.lovable.app).
-5. Optional: build the demo landing page as a separate Lovable project with [`app/landing-prompt.md`](app/landing-prompt.md) and the `/webhook/lead` URL (ours: https://chen-electronics-landing.lovable.app).
+4. Build the admin app in Lovable with [`app/lovable-prompt.md`](app/lovable-prompt.md) and the `/webhook/app` URL, then Publish.
+5. Optional: build the demo landing page as a separate Lovable project with [`app/landing-prompt.md`](app/landing-prompt.md) and the `/webhook/lead` URL.
 
 Workflow JSON files contain placeholders (`__AIRTABLE_BASE_ID__`, `__CRED_OPENAI__`, …) that the import script
 substitutes, so the repository holds **no ids and no secrets**. They can also be pasted into the n8n canvas by hand;
@@ -96,7 +98,7 @@ then pick your base, tables and credentials in each node.
 
 ## Screenshots
 
-**Admin app (Lovable)** — [hanan-erp.lovable.app](https://hanan-erp.lovable.app)
+**Admin app (Lovable)**
 
 | Dashboard | Invoices |
 |---|---|
@@ -110,7 +112,7 @@ then pick your base, tables and credentials in each node.
 |---|---|---|---|
 | ![leads](docs/images/app-leads.png) | ![products](docs/images/app-products.png) | ![tasks](docs/images/app-tasks.png) | ![chat](docs/images/app-chat.png) |
 
-**Demo landing page (Lovable)** — [chen-electronics-landing.lovable.app](https://chen-electronics-landing.lovable.app): the lead form posts to WF2; a "demo for a graduation project" banner sits at the top and in the footer.
+**Demo landing page (Lovable)** — the lead form posts to WF2; a "demo for a graduation project" banner sits at the top and in the footer.
 
 ![landing](docs/images/app-landing.png)
 

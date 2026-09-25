@@ -56,7 +56,7 @@ Keep the code simple: one page, one fetch call.
 - הפוטר: רק שורת הדיסקליימר, בלי כתובת/טלפון/אימייל.
 - כרטיס הטלגרם: "סוכן AI לתמיכה בטלגרם" עם קישור לבוט התמיכה — לא לטעון שעונה אדם.
 
-פורסם ב-https://chen-electronics-landing.lovable.app (21.9.2026).
+פורסם ב-Lovable ב-21.9.2026 (chen-electronics-landing) וכובה אחרי ההגשה, ספטמבר 2026.
 
 ## מה קורה אחרי שליחה
 
